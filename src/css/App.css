@@ -1,18 +1,26 @@
+/* FONTS - START --
+font-family: 'Raleway', sans-serif;
+font-family: 'Titillium Web', sans-serif;
+-- FONTS - END */
+/* [START] Global variables declaration */
+/* [END] Global variables declaration */
 .app {
-  text-align: center; }
-
-.app-logo {
-  transform: rotate(-11deg);
-  height: 80px; }
-
-.app-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white; }
-
-.app-title {
-  font-size: 1.5em; }
-
-.app-intro {
-  font-size: large; }
+  text-align: center;
+  background: url(../assets/background.jpeg) center 0 no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-y: scroll; }
+  .app .app-container {
+    padding-bottom: 30px; }
+  .app .app-header {
+    background-color: rgba(50, 50, 65, 0.8);
+    height: 150px;
+    padding: 20px;
+    padding-top: calc(40px + 40px);
+    color: white; }
+    .app .app-header .app-title {
+      font-size: 1.5em; }
+    .app .app-header .app-logo {
+      transform: rotate(-11deg);
+      height: 80px; }
