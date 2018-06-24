@@ -6,8 +6,11 @@ class FormComponent extends Component {
     super(props);
     this.state = {
       compra: false,
-      monto_is_valid: null,
-      precio_is_valid: null
+      monto_validity: '',
+      precio_validity: '',
+      invalid_monto_message: '',
+      invalid_precio_message: '',
+      form_validity: 'is_invalid'
     }
   }
 
@@ -15,6 +18,31 @@ class FormComponent extends Component {
     this.setState({
       compra: newAction === 'buying' ? true : false
     })
+  }
+
+  validate(event, errorMessageKey, cssClassKey){
+    let numb_regex = /^\d+$/;
+    let value = event.target.value;
+    let obj = {};
+    if ( value === '' ) {
+      obj[errorMessageKey] = 'Este campo es requerido';
+    } else {
+      obj[errorMessageKey] = numb_regex.test(value) ? '' : 'Este campo debe ser un numero valido';
+    }
+
+    if ( obj[errorMessageKey] === '' ) {
+      obj[cssClassKey] = 'is_valid';
+    } else {
+      obj[cssClassKey] = 'is_invalid';
+    }
+
+    let currentComponent = this;
+    this.setState(obj, () => {
+      let form_validity = (this.state.monto_validity === 'is_valid' && this.state.precio_validity === 'is_valid') ? 'is_valid' : 'is_invalid';
+      currentComponent.setState({
+        form_validity: form_validity
+      });
+    });
   }
 
   render() {
@@ -37,10 +65,10 @@ class FormComponent extends Component {
             <span className="caption">Monto:</span>
             <div className="input_container">
               <div className="input">
-                <input name="monto" type="text" />
+                <input name="monto" type="text" className={this.state.monto_validity} onChange={(event) => this.validate(event, 'invalid_monto_message', 'monto_validity')}/>
                 <span>BTC</span>
               </div>
-              <div className="error"><span></span></div>
+              <div className="error"><span>{this.state.invalid_monto_message}</span></div>
             </div>
           </div>
 
@@ -48,11 +76,15 @@ class FormComponent extends Component {
             <span className="caption">Precio:</span>
             <div className="input_container">
               <div className="input">
-                <input name="precio" type="text" />
+                <input name="precio" type="text" className={this.state.precio_validity} onChange={(event) => this.validate(event, 'invalid_precio_message', 'precio_validity')}/>
                 <span>ARS</span>
               </div>
-              <div className="error"><span></span></div>
+              <div className="error"><span>{this.state.invalid_precio_message}</span></div>
             </div>
+          </div>
+
+          <div className="step_container enviar">
+            <button disabled={this.state.form_validity === 'is_valid' ? false : true}>Enviar</button>
           </div>
 
         </div>
