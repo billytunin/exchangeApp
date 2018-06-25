@@ -16,6 +16,9 @@ El estado de este balance es manejado por el componente principal llamado "App.j
 Luego, exchangeApp traduce esos bitcoins a pesos Argentinos en tiempo real utilizando la API de [coindesk](https://www.coindesk.com/api/)
 
 <h2>Aclaraciones</h2>
+
 - Si se quiere soportar velocidades de conexion lentas (para la versión mobile, por ejemplo) se podría usar una foto de background mas liviana
+
 - El formato numerico está sujeto al formato de USA. Ademas el numero en ARS está limitado hasta 2 decimales despues de la coma, y en BTC a 7 decimales despues de la coma.
+
 - Si se requiere soportar multiples idiomas, debería existir un "diccionario" en el front-end donde se defina un objeto de key-values con arrays que indicarán los textos para cada idioma
