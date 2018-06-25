@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../js/App';
+import App from '../components/App.jsx';
 
 it('renderiza el componente app sin errores', () => {
   const div = document.createElement('div');

@@ -10,18 +10,4 @@
   .app-container {
     padding-bottom: 30px;
   }
-  .app-header {
-    background-color: $background-color-one;
-    height: 150px;
-    padding: 20px;
-    padding-top: calc(#{$balance-header-height} + 40px);
-    color: white;
-    .app-title {
-      font-size: 1.5em;
-    }
-    .app-logo {
-      transform: rotate(-11deg);
-      height: 80px;
-    }
-  }
 }
