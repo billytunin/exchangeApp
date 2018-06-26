@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import '../css/App.css';
 import AppHeader from './AppHeader.jsx';
 import BalanceHeaderComponent from './BalanceHeaderComponent.jsx';
 import FormComponent from './FormComponent.jsx';
-import OrderSentModalComponent from './OrderSentModalComponent.jsx';
+import OrderStatusModalComponent from './OrderStatusModalComponent.jsx';
 import order from '../js/order';
 
 class App extends Component {
@@ -36,29 +35,25 @@ class App extends Component {
             errorText: ''
           }
         });
+        return response;
       } else {
-        // Ocurrio un problema
+        this.handleOrderError(response);
       }
     }, (error) => {
-      switch(error.status){
-        case 400:
-          // Invalid data
-        break;
-
-        case 500:
-          // Error en el server
-        break;
-
-        case 403:
-          // No autorizado
-        break;
-
-        default:
-          // Ocurrio un problema
-        break;
-      }
+      this.handleOrderError(error);
     });
     // 
+  }
+
+  handleOrderError(errorObject) {
+    let errorText = order.handleOrderError(errorObject);
+    this.setState({
+      modalData: {
+        show: true,
+        title: 'Error al enviar orden',
+        errorText: errorText
+      }
+    });
   }
 
   toggleModal() {
@@ -77,7 +72,7 @@ class App extends Component {
           <AppHeader></AppHeader>
           <FormComponent sendOrder={this.sendOrder.bind(this)}></FormComponent>
         </div>
-        <OrderSentModalComponent modalData={this.state.modalData} toggleModal={this.toggleModal.bind(this)}></OrderSentModalComponent>
+        <OrderStatusModalComponent modalData={this.state.modalData} toggleModal={this.toggleModal.bind(this)}></OrderStatusModalComponent>
       </div>
     );
   }

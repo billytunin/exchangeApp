@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import SpinnerComponent from './SpinnerComponent.jsx';
-import '../css/FormComponent.css';
 
 class FormComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.initialState = {
       compra: false,
       monto_validity: '',
       precio_validity: '',
@@ -14,6 +13,7 @@ class FormComponent extends Component {
       form_validity: 'is_invalid',
       loading: false
     }
+    this.state = this.initialState
   }
 
   changeBuySell(newAction) {
@@ -51,6 +51,12 @@ class FormComponent extends Component {
     let currentComponent = this;
     currentComponent.setState({ loading: true });
     this.props.sendOrder(this.state.compra, this.monto_input.value, this.precio_input.value).then((response) => {
+      if(response && response.status === 200){
+        this.monto_input.value = '';
+        this.precio_input.value = '';
+        this.setState(this.initialState);
+      }
+    }).finally(() => {
       currentComponent.setState({ loading: false });
     });
   }

@@ -1,5 +1,3 @@
-@import 'global-variables.scss';
-
 .modal_wrapper {
   position: fixed;
   top: 0;
@@ -18,7 +16,7 @@
     margin-top: 20vh;
     margin-bottom: 20vh;
     text-transform: uppercase;
-    h2, .body {
+    h2, .body, .errorText {
       width: 80%;
       margin: auto;
     }
@@ -27,6 +25,14 @@
       padding-top: 12px;
       padding-bottom: 10px;
       font-family: 'Raleway', sans-serif;
+    }
+    .errorText {
+      margin-top: 16px;
+      margin-bottom: 30px;
+      font-size: 18px;
+      text-transform: none;
+      color: red;
+      font-family: 'Titillium Web', sans-serif;
     }
     .body {
       text-align: left;

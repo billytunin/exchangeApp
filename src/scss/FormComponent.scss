@@ -1,5 +1,3 @@
-@import 'global-variables.scss';
-
 .form_container {
   color: white;
   width: 420px;
@@ -86,3 +84,14 @@
     }
   }
 }
+
+/* [START] Mobile adaptation */
+@media (max-width: 768px) {
+  .form_container {
+    width: 85%;
+    input {
+      width: 25vw;
+    }
+  }
+}
+/* [END] Mobile adaptation */

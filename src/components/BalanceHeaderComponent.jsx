@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/BalanceHeaderComponent.css';
 import constants from '../js/constants';
 
 class BalanceHeaderComponent extends Component {
@@ -51,13 +50,15 @@ class BalanceHeaderComponent extends Component {
     return (
       <div className="balance_header">
         <span className="info">Balance actual:</span>
-        <div className="container">
-          <span className="amount">{this.formatearNumero(this.state.ARS, true)}</span>
-          <span className="currency">ARS</span>
-        </div>
-        <div className="container">
-          <span className="amount">{this.formatearNumero(this.props.BTC)}</span>
-          <span className="currency">BTC</span>
+        <div className="currency_container">
+          <div className="container">
+            <span className="amount">{this.formatearNumero(this.state.ARS, true)}</span>
+            <span className="currency">ARS</span>
+          </div>
+          <div className="container">
+            <span className="amount">{this.formatearNumero(this.props.BTC)}</span>
+            <span className="currency">BTC</span>
+          </div>
         </div>
       </div>
     );
