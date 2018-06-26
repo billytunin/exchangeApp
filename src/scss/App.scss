@@ -13,8 +13,10 @@
 
 /* [START] Mobile adaptation */
 @media (max-width: 768px) {
-  .app-container {
-    padding-top: calc(#{$balance-header-height-mobile} + 20px);
+  .app {
+    .app-container {
+      padding-top: calc(#{$balance-header-height-mobile} + 20px);
+    }
   }
 }
 /* [END] Mobile adaptation */

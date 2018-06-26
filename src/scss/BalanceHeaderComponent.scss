@@ -8,6 +8,9 @@
   background-color: rgba(45, 45, 45, 0.55);
   box-shadow: inset 0px -20px 100px -27px;
   z-index: 20;
+  .currency_container {
+    display: inline;
+  }
   .container {
     display: inline;
     padding: 10px;
@@ -52,11 +55,19 @@
     height: $balance-header-height-mobile;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     .info {
-      padding-top: 19px;
+      max-width: 24%;
+      display: inline-flex;
+      align-items: center;
+      padding: 0;
+      padding-bottom: 15px;
     }
     .currency_container {
-      width: 50%;
+      width: fit-content;
+      width: -moz-fit-content;
+      width: -webkit-fit-content;
+      padding-right: 8vw;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
