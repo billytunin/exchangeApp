@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Suite de tests del componente AppHeader matchea el ultimo snapshot de AppHeader 1`] = `
+<header
+  className="app-header"
+>
+  <img
+    alt="logo"
+    className="app-logo"
+    src="logo.svg"
+  />
+  <h1
+    className="app-title"
+  >
+    Bienvenido a Exchange App
+  </h1>
+</header>
+`;

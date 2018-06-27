@@ -32,7 +32,7 @@ class BalanceHeaderComponent extends Component {
     });
   }
 
-  formatearNumero(number, isARS) {
+  formatNumber(number, isARS) {
     if ( typeof number !== 'number' ) {
       return 'cargando...';
     }
@@ -52,11 +52,11 @@ class BalanceHeaderComponent extends Component {
         <span className="info">Balance actual:</span>
         <div className="currency_container">
           <div className="container">
-            <span className="amount">{this.formatearNumero(this.state.ARS, true)}</span>
+            <span className="amount">{this.formatNumber(this.state.ARS, true)}</span>
             <span className="currency">ARS</span>
           </div>
           <div className="container">
-            <span className="amount">{this.formatearNumero(this.props.BTC)}</span>
+            <span className="amount">{this.formatNumber(this.props.BTC)}</span>
             <span className="currency">BTC</span>
           </div>
         </div>

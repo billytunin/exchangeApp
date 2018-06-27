@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Suite de tests del componente OrderStatusModalComponent coincide con el último snapshot 1`] = `
+<div
+  className="modal_wrapper show"
+>
+  <div
+    className="modal_container"
+  >
+    <h2
+      className="title"
+    >
+      OrderStatusModalComponent test
+    </h2>
+    <div
+      className="body show"
+    >
+      <p
+        className="detalle"
+      >
+        DETALLE:
+      </p>
+      <p
+        className="buying caption"
+      >
+        ORDEN PARA
+      </p>
+      <p
+        className="buying value"
+      >
+        comprar
+      </p>
+      <p
+        className="monto caption"
+      >
+        MONTO A 
+        comprar
+        :
+      </p>
+      <p
+        className="monto value"
+      >
+        1
+      </p>
+      <p
+        className="precio caption"
+      >
+        PRECIO POR CADA BTC:
+      </p>
+      <p
+        className="precio value"
+      >
+        100000
+      </p>
+      <p
+        className="notice"
+      >
+        (AVISO: Para la finalidad de esta demo, las ordenes se aceptarán automaticamente y, por lo tanto, su balance se actualizará al instante)
+      </p>
+    </div>
+    <p
+      className="errorText hide"
+    >
+      
+    </p>
+    <button
+      onClick={undefined}
+    >
+      OK
+    </button>
+  </div>
+</div>
+`;

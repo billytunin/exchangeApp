@@ -12,7 +12,7 @@ class App extends Component {
       BTC: 0.624122,
       modalData: {
         show: false,
-        type: 'comprar',
+        type: 'vender',
         amount: 0,
         price: 0,
         errorText: ''
@@ -42,7 +42,6 @@ class App extends Component {
     }, (error) => {
       this.handleOrderError(error);
     });
-    // 
   }
 
   handleOrderError(errorObject) {

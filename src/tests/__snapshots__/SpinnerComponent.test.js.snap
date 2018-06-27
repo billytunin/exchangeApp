@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Suite de tests del componente SpinnerComponent coincide con el último snapshot 1`] = `
+<div
+  className="spinner_container hide"
+>
+  <div
+    className="spinner"
+  />
+</div>
+`;
