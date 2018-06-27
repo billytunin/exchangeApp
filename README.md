@@ -12,8 +12,13 @@ Este comando también se encarga de compilar los archivos SASS a CSS y despierta
 
 <h2>BTC</h2>
 A modo didactico y por fines de practicidad, la cantidad inicial de BTC del usuario se asigna por código a mano.
-El estado de este balance es manejado por el componente principal llamado "App.jsx" (en "src/App.jsx"), y por lo tanto se puede modificar por código en aquel componente. En un caso de uso real, este componente utilizaría algun endpoint para obtener el balance actual del usuario desde una base de datos.
-Luego, exchangeApp traduce esos bitcoins a pesos Argentinos en tiempo real utilizando la API de [coindesk](https://www.coindesk.com/api/)
+El estado de este balance es manejado por el componente principal llamado "App.jsx" (en "src/App.jsx"), y por lo tanto se puede modificar por código en aquel componente. Luego, exchangeApp traduce esos bitcoins a pesos Argentinos en tiempo real utilizando la API de [coindesk](https://www.coindesk.com/api/).
+En un caso de uso real, este componente utilizaría algun endpoint para obtener el balance actual del usuario desde una base de datos.
+
+<h2>Tests</h2>
+Los tests se ejecutan utilizando Jest .
+Con el comando ```npm test``` ejecutaremos todos los tests suites y se activará un watcher que observara los archivos .test .
+Algunos tests usan la funcionalidad de snapshots de react-test-renderer . Por lo cual, si se necesitara actualizar los snapshots (porque se cambia el layout de algun componente, por ejemplo) solo basta con ejecutar ```jest --updateSnapshot``` .
 
 <h2>Aclaraciones</h2>
 
